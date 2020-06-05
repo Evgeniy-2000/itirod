@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="scripts/SomeScript.js"></script>
+</head>
+<body>
+	<header class="top">
+		<nav>
+			<button><a href="SignIn.html">Exit</a></button>
+			<button><a href="ChooseCrossword.html">Solve crossword</a></button>
+			<button><a href="MyCrosswords.html">My crosswords</a></button>
+		</nav>
+	</header>
+	<aside class="questions_panel">
+		<div align="center">
+		<h2>
+			Questions
+		</h2>
+		<hr>
+		<textarea placeholder="Questions here"></textarea>
+		</div>
+		<hr>
+		<div align="center">
+			<input placeholder="Name" class="entry">
+			<input placeholder="Id" class="entry">
+		</div>
+		<div align="center" class="questions_interaction">
+			<button>Add</button>
+			<button>Make copy</button>
+			<button>Save</button>
+		</div>
+	</aside>
+	<aside class="users_crosswords">
+		<h3 align="center">
+			My crosswords
+		</h3>
+		<hr>
+		<div align="center"><button>Name1</button><button>Stat.</button><button>Del.</button></div>
+		<div align="center"><button>Name2</button><button>Stat.</button><button>Del.</button></div>
+		<div align="center"><button>Name3</button><button>Stat.</button><button>Del.</button></div>
+		<hr>
+		<div align="center">
+			<button>Create</button>
+		</div>
+	</aside>
+	<article align="center" class="crossword">
+		<table cellpadding="0px" cellpadding="0px">
+			<script type="text/javascript">
+				for (var i = 0; i < 8; i++) {
+					document.write("<tr>");
+					for (var j = 0; j < 10; j++) {
+						document.write("<td><input class=\"table_cell\"></td>");
+					}
+					document.write("</tr>");
+				}
+			</script>
+		</table>
+	</article>
+</body>
+</html>

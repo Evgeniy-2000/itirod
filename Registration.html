@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="scripts/Registration.js" type="text/javascript"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+  </style> 
+</head>
+<body>
+	<form class="start_forms_registration">
+		<h1 align="center">Registration</h1>
+		<hr>
+		<input type="text" name="name" placeholder="name" id="name" class="reg_input"><br/>
+		<input type="password" name="password" placeholder="password" id="password" class="reg_input"><br/>
+		<input type="password" name="confirmPassword" placeholder="password" id="confirmPassword" class="reg_input"><br/>
+		<button onclick="Registration()" class="reg_button">Registration</button>
+	</form>
+	<script type="text/javascript">
+				var firebaseConfig = {
+				    apiKey: "AIzaSyC1twuLONMtc9Bed3MfAtCP16Og8BFboC0",
+				    authDomain: "final-b9d65.firebaseapp.com",
+				    databaseURL: "https://final-b9d65.firebaseio.com",
+				    projectId: "final-b9d65",
+				    storageBucket: "final-b9d65.appspot.com",
+				    messagingSenderId: "988687201947",
+				    appId: "1:988687201947:web:09f596f76aa1ae2625f83e",
+				    measurementId: "G-TGPZN8KH7B"
+				};
+			  	firebase.initializeApp(firebaseConfig);
+			  	var db = firebase.database();
+
+		function Registration(){
+			var _name = document.getElementById('name').value;
+			var _password = document.getElementById('password').value;
+			var _confPassword = document.getElementById('confirmPassword').value;
+
+			if(_name.length == 0){
+				alert('Input name. please!')
+			}
+			else if(_password != _confPassword){
+				alert('Incorrect password!');
+			}
+			else if(_password.length < 1){
+				alert('Password have to consist from at least 8 symbols!');
+			}
+			else{
+				var res = "Keys: ";
+				db.ref('/').once('value', function(snapshot) {
+					snapshot.forEach(function(childSnapshot)
+					{
+						var childKey = childSnapshot.key;
+						//var childData = childSnapshot.val();
+						//alert(childData['name'] + "/" + childData['password']);
+						res += childKey;
+					})
+				});
+				alert(res);
+				/*firebase.database().ref('User/' + ).once('value').then(function(snapshot) {
+  					var username = (snapshot.val() && snapshot.val().name) || 'Anonymous';
+				});*/
+				/*document.firebase.database().ref("Users/" + _name).set({
+		    		password : _password,
+				});*/
+				db.ref().child('Users').push({
+					name: _name,
+					password: _password
+				});
+			}
+		}
+	</script>
+</body>
+</html>

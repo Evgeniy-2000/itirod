@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="scripts/ChooseCrossword.js"></script>
+</head>
+<body>
+	<header class="top">
+		<nav>
+			<a href="SignIn.html">Go the start page</a>
+			<a href="ChooseCrossword.html">Solve crossword</a>
+			<a href="MyCrosswords.html">My crosswords</a>
+		</nav>
+	</header>
+	<article align="center" class="choose_crossword" id="center">
+		<button class="choose_elements">All crosswords</button>
+		<input placeholder="Id" class="choose_elements">
+		<button  class="choose_elements">Search</button>
+		<table cellspacing="0" class="table_stat">
+			<tr>
+				<th><p class="res_table_head">
+					Name
+				</p></th>
+				<th><p class="res_table_head">
+					Id
+				</p></th>
+				<th><p class="res_table_head">
+					Author
+				</p></th>
+				<th><p class="res_table_head">
+					Solve
+				</p></th>
+				<th><p class="res_table_head">
+					Statistics
+				</p></th>
+			</tr>
+			<script type="text/javascript">
+				for (var i = 0; i < 8; i++) {
+					document.write("<tr>");
+					document.write('<td><p class="res_table">Crossword Name ' + i  + '</p></td>');
+					document.write('<td><p class="res_table">Id ' + i  + '</p></td>');
+					document.write('<td><p class="res_table">Author ' + i  + '</p></td>');
+					document.write('<td><a class="stat_or_solve">Solve</a></td>');
+					document.write('<td><a class="stat_or_solve">Show st.</a></td>');
+					document.write("</tr>");
+				}
+			</script>
+		</table>
+		<div class="statistics">
+			<table cellspacing="10px">
+				<tr>
+					<th><p class="res_table_head">Name</p></th>
+					<th><p class="res_table_head">Result</p></th>
+				</tr>
+				<script type="text/javascript">
+					for (var i = 0; i < 5; i++) {
+						document.write("<tr>");
+						document.write('<td><p class="res_table">Username_' + i + '</p></td>');
+						document.write('<td><p class="res_table">' + Math.floor(100*Math.random()) + '%</p></td>');
+						document.write("</tr>");
+					}
+				</script>
+			</table>
+		</div>
+	</article>
+</body>
+</html>

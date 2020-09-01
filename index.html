@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <script type="module" src="index.js"></script>
+        <title></title>
+    </head>
+    <body>       
+        <header id="temp">
+        </header>
+
+        <main>
+        </main>
+
+        <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+
+        <script>
+            var firebaseConfig = {
+                apiKey: "AIzaSyC1twuLONMtc9Bed3MfAtCP16Og8BFboC0",
+                authDomain: "final-b9d65.firebaseapp.com",
+                databaseURL: "https://final-b9d65.firebaseio.com",
+                projectId: "final-b9d65",
+                storageBucket: "final-b9d65.appspot.com",
+                messagingSenderId: "988687201947",
+                appId: "1:988687201947:web:09f596f76aa1ae2625f83e",
+                measurementId: "G-TGPZN8KH7B"
+            };
+            firebase.initializeApp(firebaseConfig);
+
+            const auth = firebase.auth();
+            const db = firebase.database();
+          </script>
+    </body>
+</html>

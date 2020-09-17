@@ -7,10 +7,9 @@ let Autorization = {
         <form class="start_forms" id="auth_form">
 		<h1 align="center">Sign In</h1>
 		<hr>
-		<input type="text" placeholder="name" id="name" class="sign_in_input">
+		<input type="text" placeholder="name" id="name" class="sign_in_input"><br/>
 		<input type="password" placeholder="password" id="password" class="sign_in_input"><br/>
-
-		<button class="sign_in_button">Sign In</button>
+		<button class="sign_in_button">Sign In</button><br/>
 		<a href="#/registration">Regitration</a>
 	    </form>
         `;

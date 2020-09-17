@@ -3,9 +3,9 @@ let Navbar = {
         return `
             <header class="top">
                 <nav>
-                    <a href="" id="exit">Go the start page</a>
-                    <a href="#/choose">Solve crossword</a>
                     <a href="#/construct">My crosswords</a>
+                    <a href="#/choose">Solve crossword</a>
+                    <a href="" id="exit">Exit</a>
                 </nav>
             </header>
         `;

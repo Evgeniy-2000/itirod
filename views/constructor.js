@@ -1,41 +1,13 @@
+import Table from '../services/table.js'
+
 let Constructor = {
-    tmp2: "",
-    render: async (user) => {
+
+    render: async () => {
         Constructor.rows = 8;
         Constructor.columns = 10;
-        Constructor.user = user;
-        let tmp = '';
-        for (var i = 0; i < 8; i++) {
-            tmp += "<tr>";
-            for (var j = 0; j < 10; j++) {
-                if(i == 0 && j > 0){
-                    tmp += '<td><input class=\"table_cell\" maxlength="1" readonly name="cell" value="' + j + '"></td>';
-                } else if(j == 0 && i > 0){
-                    let ch = '';
-                    switch(i){
-                        case 1: ch = 'A'; break;
-                        case 2: ch = 'B'; break;
-                        case 3: ch = 'C'; break;
-                        case 4: ch = 'D'; break;
-                        case 5: ch = 'E'; break;
-                        case 6: ch = 'F'; break;
-                        case 7: ch = 'G'; break;
-                        case 8: ch = 'H'; break;
-                    }
-                    tmp += '<td><input class=\"table_cell\" maxlength="1" readonly name="cell" value="' + ch + '"></td>';
-                }
-                else if(i == 0 && j == 0){
-                    tmp += '<td><input class=\"table_cell\" readonly maxlength="1" name="cell"></td>';
-                }
-                else{
-                    tmp += '<td><input class=\"table_cell\" maxlength="1" name="cell"></td>';
-                }
-            }
-            tmp += "</tr>";
-        }
 
         return `
-                    <aside class="questions_panel">
+                <aside class="questions_panel">
                     <div align="center">
                     <h2>
                         Questions
@@ -47,6 +19,11 @@ let Constructor = {
                     <div align="center">
                         <input placeholder="Name" class="entry" id="name_entry" maxlength="6">
                         <input placeholder="Id" class="entry" id="id_entry" maxlength="6">
+                    </div>
+                    <div>
+                        <input placeholder="Hor" type="number" min="5" max="10" class="entry_dimension" id="hor_entry" maxlength="2">
+                        <input placeholder="Ver" type="number" min="5" max="10" class="entry_dimension" id="ver_entry" maxlength="2">
+                        <button id="change_dim_button">Change</button>
                     </div>
                     <div align="center" class="questions_interaction">
                         <button id="save_button">Save</button>
@@ -67,28 +44,37 @@ let Constructor = {
                     </div>
                 </aside>
                 <article align="center" class="crossword">
-                    <table cellpadding="0px" cellpadding="0px">
-                        ${tmp}
+                    <table cellpadding="0px" cellpadding="0px" id="table_cells">
+                        ${Table.renderTable(10, 8)}
                     </table>
                 </article>
 
         `;
     },
-
-    rows: 8,  
-    columns: 10,  
+ 
 
     afterRender: async () => {
         const save = document.getElementById('save_button');
         const id_field = document.getElementById('id_entry');
         const name_field = document.getElementById('name_entry');
         const questions_field = document.getElementById('questions_entry');
+        const hor_field = document.getElementById('hor_entry');
+        const ver_field = document.getElementById('ver_entry');
+        const table = document.getElementById('table_cells');
+        hor_field.value = 10;
+        ver_field.value = 8;
 
         const Change = document.getElementById('Change');
         const Delete = document.getElementById('Delete');
         const Create = document.getElementById('Create');
         const inp_num = document.getElementById('inp_num');
+        const change_dimension = document.getElementById('change_dim_button');
 
+        firebase.auth().onAuthStateChanged(firebaseUser => {
+            if (!firebaseUser){
+                window.location.hash = '/';
+            }
+        });
         
         db.ref('crosswords/').on('value', function(snapshot){
             var keys = [];
@@ -115,6 +101,9 @@ let Constructor = {
                         if(counter == Number(inp_num.value)){
                             id_field.value = key;
                             name_field.value = data['name'];
+                            let width = data['width'];
+                            let height = data['height'];
+                            table.innerHTML = Table.renderTable(width, height);
                             questions_field.value = data['questions'];
                             let cells_inputs = document.getElementsByName('cell');
                             let str = data['answers'];
@@ -163,19 +152,53 @@ let Constructor = {
                 answers += cells_inputs[i].value == "" ? " " : cells_inputs[i].value;
             }
             db.ref('crosswords/' + id_value).on('value', function(snapshot) {
-                if(snapshot.val() == null) {
-                    db.ref('crosswords/' + id_value).set({
-                        name: name_field.value,
-                        height: Constructor.rows,
-                        width: Constructor.columns,
-                        questions: questions_field.value,
-                        answers: answers,
-                        author: auth.currentUser.email
-                    });
-                }
+                db.ref('crosswords/' + id_value).set({
+                    name: name_field.value,
+                    height: Constructor.rows,
+                    width: Constructor.columns,
+                    questions: questions_field.value,
+                    answers: answers,
+                    author: auth.currentUser.email
+                });
             });
             location.reload();
         });
+
+        /*This function changes dimension of our table and keeps letters, that table contains*/
+        change_dimension.addEventListener('click', async e => {
+            let hor_count_prev = Constructor.columns;
+            let ver_count_prev = Constructor.rows;
+            let hor_count = hor_field.value;
+            let ver_count = ver_field.value;
+            let cells_inputs = document.getElementsByName('cell');
+
+            Constructor.rows = ver_count;
+            Constructor.columns = hor_count;
+            let table_cells = '';
+            for (var i = 0; i < ver_count; i++) {
+                table_cells += "<tr>";
+                for (var j = 0; j < hor_count; j++) {
+                    if(i == 0 && j > 0){
+                        table_cells += '<td><input class="table_cell" maxlength="1" readonly name="cell" value="' + j + '"></td>';
+                    } else if(j == 0 && i > 0){
+                        table_cells += '<td><input class=\"table_cell\" maxlength="1" readonly name="cell" value="' + String.fromCharCode(64 + i) + '"></td>';
+                    }
+                    else if(i == 0 && j == 0){
+                        table_cells += '<td><input class=\"table_cell\" readonly maxlength="1" name="cell"></td>';
+                    }
+                    else{
+                        let cell_value = "";
+                        if(i < hor_count_prev && j < ver_count_prev){
+                            cell_value = cells_inputs[i * hor_count_prev + j].value;
+                        }
+                        table_cells += '<td><input class="table_cell" maxlength="1" name="cell" value="' + cell_value + '"></td>';
+                    }
+                }
+            }
+            table_cells += "</tr>";
+            table.innerHTML = table_cells;
+        });
+
     }
 };
 

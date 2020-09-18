@@ -305,7 +305,7 @@ body{
 }
 
 /* 375x812 (IPhone X) */
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 380px) {
 	.top{
 		width: 92%;
 		height: 26px;

@@ -188,7 +188,7 @@ let Constructor = {
                     }
                     else{
                         let cell_value = "";
-                        if(i < hor_count_prev && j < ver_count_prev){
+                        if(j < hor_count_prev && i < ver_count_prev){
                             cell_value = cells_inputs[i * hor_count_prev + j].value;
                         }
                         table_cells += '<td><input class="table_cell" maxlength="1" name="cell" value="' + cell_value + '"></td>';

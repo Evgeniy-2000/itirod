@@ -5,7 +5,7 @@ let Navbar = {
                 <nav>
                     <a href="#/construct">My crosswords</a>
                     <a href="#/choose">Solve crossword</a>
-                    <a href="" id="exit">Exit</a>
+                    <a href="#/" id="exit">Exit</a>
                 </nav>
             </header>
         `;

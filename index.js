@@ -18,8 +18,8 @@ const routes = {
 };
 
 const router = async () => {
-    const header = null || document.querySelector('header');
-    const content = null || document.querySelector('main');
+    const header = document.querySelector('header');
+    const content = document.querySelector('main');
     let request = Utils.parseRequestURL();
     let parsedURL = (request.resource ? '/' + request.resource : '/') + (request.id ? '/:id' : '');
 

@@ -146,6 +146,11 @@ let Constructor = {
 
         save.addEventListener('click', async e => {
             let id_value = id_field.value;
+            let name_value = name_field.value;
+            if(name_value.length == 0 || id_value.length == 0){
+                alert('Name and Id fields cant be empty!')
+                return;
+            }
             let answers = "";
             let cells_inputs = document.getElementsByName('cell');
             for(var i = 0; i < cells_inputs.length; i++) {
@@ -153,7 +158,7 @@ let Constructor = {
             }
             db.ref('crosswords/' + id_value).on('value', function(snapshot) {
                 db.ref('crosswords/' + id_value).set({
-                    name: name_field.value,
+                    name: name_value,
                     height: Constructor.rows,
                     width: Constructor.columns,
                     questions: questions_field.value,

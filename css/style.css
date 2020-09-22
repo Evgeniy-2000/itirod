@@ -307,19 +307,21 @@ body{
 /* 375x812 (IPhone X) */
 @media screen and (max-width: 380px) {
 	.top{
-		width: 92%;
+		margin-left: 2%;
+		width: 90%;
 		height: 26px;
 	}
 
 	.top > nav {
 		margin-top: 0.6%;
-		margin-left: 3%
+		margin-left: 1.5%;
 	}
 
 	.top > nav > a{
 		padding: 3px;
 		margin-top: 5px;
-		width: 25%;
+		margin-left: 1%;
+		width: 20%;
 		vertical-align: middle;
 	}
 
@@ -349,7 +351,7 @@ body{
 
 	.users_crosswords{
 		width: 60%;
-		margin-top: -80%;
+		margin-top: -95%;
 		margin-left: -36%;
 		padding-bottom: 2px;
 	}
@@ -359,13 +361,14 @@ body{
 		border-radius: 5px;
 		margin-right: 2px;
 		margin-left: 2px;
+		margin-bottom: 3%;
 		width: 30%;
 	}
 
 	.table_cell{
-		width: 15px;
-		height: 15px;
-		border-radius: 5px;
+		width: 12px;
+		height: 12px;
+		border-radius: 4px;
 	}
 
 	.table_cell2{

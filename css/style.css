@@ -427,24 +427,26 @@ body{
 
 	.choose_crossword{
 		margin-left: 9%;
-		width: 80%;
+		width: 83%;
 		height: 60%;
 	}
 
 	.choose_crossword > table{
 		margin-left: 5%;
-		width:85%;
+		width: 85%;
 	}
 
 	.choose_elements{
 		width: 30%;
 		margin: 1px;
-		margin-top: 5px;
-		margin-bottom: 5px;
+		margin-top: 0;
+		margin-left: 2%;
+		margin-bottom: 4%;
 	}
 
 	.choose_elements_button{
-		margin-left: 9%;
+		margin-left: 3%;
+		width: 15%;
 	}
 
 	.stat_or_solve{

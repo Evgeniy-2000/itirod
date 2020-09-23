@@ -1,0 +1,493 @@
+.top{
+	position: relative; 
+	left: 2%;
+	width: 96%;
+	height: 40px;
+	border-radius: 15px;
+	border: 1px solid white;
+	padding: 7px; 
+	background: url("../images/header4.jpg");
+}
+
+.inp_ord_num{
+	border-radius: 5px;
+	padding: 3px;
+}
+
+.top > nav {
+	margin-top: 0.6%;
+	margin-left: 77%
+}
+
+.top > nav > a{
+	position: relative; 
+	top: 10%;
+	border-radius: 10px;
+	padding: 5px;
+	margin: 4px;
+	margin-right: 15px;
+	border: 1px solid black;
+	width: 135px;
+	background-color: white;
+	text-align: center;
+}
+
+.questions_panel{
+	position: relative; 
+	background: #fc0; 
+	left: 2%;
+	width: 25%;
+	border-radius: 15px;
+	margin-top: 2%;
+	border: 1px solid black;
+	padding-bottom: 5px;
+	background: url(../images/questions4.jpg)
+}
+
+.questions_panel textarea{
+	border-radius: 10px;
+	height: 300px;
+}
+
+.questions_panel > h2{
+	color: white;
+}
+
+.questions_interaction{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.questions_panel > div > button{
+	margin: 10px;
+	width: 35%;
+	padding: 5px;;
+	border-radius: 7px;
+	border: 2px solid black;
+}
+
+.entry{
+	border-radius: 10px;
+	padding: 5px;
+	width: 30%;
+}
+
+.entry_dimension{
+	border-radius: 8px;
+	padding: 4px;
+	width: 20%;
+	margin-left: 5%;
+}
+
+.users_crosswords{
+	position: relative; 
+	left: 75%;
+	width: 18%;
+	border-radius: 15px;
+	margin-top: -25%;
+	border: 1px solid black;
+	padding-bottom: 8px;
+	background: url("../images/users_crosswords3.jpg");
+}
+
+.users_crosswords > div > button{
+	margin-top: 4px;
+	border-radius: 7px;
+	border: 2px solid black;
+	margin-right: 10px;
+	margin-left: 10px;
+	width: 25%;
+}
+
+.users_crosswords > div > div > button{
+	margin-top: 4px;
+	border-radius: 7px;
+	border: 2px solid black;
+	margin-right: 10px;
+	margin-left: 10px;
+	width: 25%;
+}
+
+.table_cell{
+	width: 40px;
+	height: 40px;
+	border-radius: 7px;
+	text-align: center;
+}
+
+.crossword{
+	margin-left: 38%;
+	margin-top: -15%;
+}
+
+
+body{
+	background: url(../images/background2.jpg);
+}
+
+.start_forms{
+	margin-left: 39%;
+	margin-top: 10%;
+	padding: 1%;
+	width: 20%;
+	height: 35%;
+	background-color: grey;
+	border: 3px solid white;
+	border-radius: 15px;
+	background: url(../images/table.jpg);
+}
+
+.sign_in_button{
+	border-radius: 10px;
+	border: 1px solid black;
+	margin: 10px;
+	padding: 5px;
+	width: 38%;
+	margin-left: 30%;
+	background-color: #f7e439;
+}
+
+.sign_in_input{
+	border-radius: 10px;
+	border: 1px solid black;
+	margin: 10px;
+	padding: 5px;
+	width: 35%;
+	margin-left: 30%;
+	background-color: #e8da5a;
+}
+
+.start_forms > a{
+	font-size: 18px;
+	color: black;
+	margin-left: 38%;
+}
+
+.start_forms_registration{
+	margin-left: 39%;
+	margin-top: 10%;
+	padding: 1%;
+	width: 20%;
+	height: 35%;
+	background-color: grey;
+	border: 3px solid white;
+	border-radius: 15px;
+	background: url(../images/table.jpg);
+}
+
+.reg_input{
+	border-radius: 10px;
+	border: 1px solid black;
+	margin: 10px;
+	margin-left: 30%;
+	padding: 5px;
+	width: 35%;
+	background-color: #e8da5a;
+}
+
+.reg_button{
+	width: 38%;
+	background-color: #f7e439;
+	border-radius: 10px;
+	border: 1px solid black;
+	margin: 10px;
+	margin-left: 30%;
+	padding: 5px;
+}
+
+.choose_crossword{
+	background-color: orange;
+	border-radius: 10px;
+	border: 1px solid black;
+	margin-top: 1%;
+	margin-left: 20%;
+	margin-right: 20%;
+	padding-bottom: 1%;
+	height: 60%;
+	background: url(../images/table.jpg);
+}
+
+.choose_elements_button{
+	border-radius: 7px;
+	border: 1px solid black;
+	width: 9%;
+	margin: 15px;
+	margin-left: 0%;
+	margin-bottom: 2px;
+	padding: 3px;
+}
+
+.choose_elements{
+	border-radius: 7px;
+	border: 1px solid black;
+	width: 9%;
+	margin: 15px;
+	margin-bottom: 2px;
+	padding: 3px;
+}
+
+.stat_or_solve{
+	padding: 4px;
+	border-radius: 6px;
+	width: 80px;
+	font-weight: bold;
+	margin: 3px;
+	background-color: #e8da5a;
+	border: 1px solid white; 
+}
+
+
+.choose_crossword > table{
+	border-radius: 6px;
+	border: 1px solid black;
+	background-color: white;
+	margin-left: 30%;
+}
+
+.statistics{
+	margin-left: 70%;
+	position: absolute;
+	left: -80px;
+	top: 130px;
+}
+
+.statistics > table{
+	border-radius: 7px;
+	border: 1px solid black;
+	padding: 1px;
+	margin: 1%;
+	background-color: white;
+	color: black;
+}
+
+.table_stat{
+	font-size: 18px;
+}
+
+.res_table_head{
+	padding: 4px;
+	border-radius: 5px;
+	background-color: #f7e439;
+	margin: 5px;
+}
+
+.res_table{
+	padding: 4px;
+	border-radius: 5px;
+	background-color: #e8da5a;
+	text-align: center;
+	font-weight: bold;
+	margin: 1px;
+}
+
+.solve_crossword{
+	margin-left: 37%;
+	margin-top: -10%;
+}
+
+.conditions_panel{
+	color: black; 
+	background-color: white; 
+	border-radius: 10px; 
+	margin: 10%;
+	width: 80%;
+}
+
+.tasks_field{
+	width: 80%;
+	resize: none;
+}
+
+#for-insert-1{
+	position: absolute;
+	left: 43%;
+	top: 15%;
+}
+
+/* 375x812 (IPhone X) */
+@media screen and (max-width: 380px) {
+	.top{
+		margin-left: 2%;
+		width: 90%;
+		height: 26px;
+	}
+
+	.top > nav {
+		margin-top: 0.6%;
+		margin-left: 1.5%;
+	}
+
+	.top > nav > a{
+		padding: 3px;
+		margin-top: 5px;
+		margin-left: 1%;
+		width: 20%;
+		vertical-align: middle;
+	}
+
+	.questions_panel{
+		left: 1%;
+		width: 35%;
+		border-radius: 15px;
+		margin-top: 2%;
+		border: 1px solid black;
+		padding-bottom: 5px;
+	}
+
+	.questions_panel textarea{
+		width: 80%;
+		border-radius: 8px;
+	}
+
+	.questions_panel > div > button{
+		width: 50%;
+		margin: 3%;
+	}
+
+	.entry{
+		width: 60%;
+		margin: 3%;
+	}
+
+	.users_crosswords{
+		width: 60%;
+		margin-top: -95%;
+		margin-left: -36%;
+		padding-bottom: 2px;
+	}
+
+	.users_crosswords > div > button{
+		margin-top: 3px;
+		border-radius: 5px;
+		margin-right: 2px;
+		margin-left: 2px;
+		margin-bottom: 3%;
+		width: 30%;
+	}
+
+	.table_cell{
+		width: 12px;
+		height: 12px;
+		border-radius: 4px;
+	}
+
+	.table_cell2{
+		width: 25px;
+		height: 25px;
+		border-radius: 7px;
+	}
+
+	.crossword{
+		position: absolute;
+		left: 0px;
+		top: 140px;
+	}
+
+	.entry_dimension{
+		margin-left: 6%;
+		width: 30%;
+	}
+
+	#change_dim_button{
+		width: 70%;
+		margin-left: 15%;
+		margin-top: 7%;
+	}
+
+	/* "Sign In" and "Registration" forms */
+	.start_forms{
+		margin-left: 8%;
+		margin-top: 45%;
+		width: 80%;
+	}
+
+	.start_forms > button{
+		width: 60%;
+		height: 30px;
+		font-size: 20px;
+		margin-left: 20%;
+		color: black;
+	}
+
+	.start_forms > input{
+		margin-left: 20%;
+		width: 60%;
+	}
+
+	.start_forms > a{
+		font-size: 18px;
+		color: black;
+	}
+
+	.start_forms_registration{
+		margin-left: 8%;
+		margin-top: 35%;
+		width: 80%;
+	}
+
+	.choose_crossword{
+		margin-left: 9%;
+		width: 83%;
+		height: 60%;
+	}
+
+	.choose_crossword > table{
+		margin-left: 5%;
+		width: 85%;
+	}
+
+	.choose_elements{
+		width: 30%;
+		margin: 1px;
+		margin-top: 0;
+		margin-left: 2%;
+		margin-bottom: 4%;
+	}
+
+	.choose_elements_button{
+		margin-left: 3%;
+		width: 15%;
+	}
+
+	.stat_or_solve{
+		padding: 3px;
+		width: 50%;
+	}
+
+	.table_stat{
+		margin-top: 8%;
+	}
+
+	.statistics{
+		margin-left: 45%;
+		position: absolute;
+		top: 515px;
+	}
+
+	.statistics > table{
+		padding: 0px;
+	}
+
+	.stat_or_solve{
+		height: 40px;
+		width: 60px;
+	}
+
+	.solve_crossword{
+		position: absolute;
+		left: -22%;
+		top: 18%;
+	}
+
+	.questions_panel2{
+		width: 80%;
+		margin-left: 9%;
+		top: 300px;
+	}
+
+	#for-insert-1{
+		position: absolute;
+		left: 20%;
+		top: 12%;
+	}
+}

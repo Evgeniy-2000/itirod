@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+	<script src="scripts/SignIn.js"></script>
+</head>
+<body>
+	<form class="start_forms">
+		<h1 align="center">Sign In</h1>
+		<hr>
+		<input type="text" name="name" placeholder="name" id="name" class="sign_in_input">
+		<input type="password" name="password" placeholder="password" id="password" class="sign_in_input"><br/>
+
+		<button onclick="SignIn()" class="sign_in_button">Sign In</button>
+		<a href="Registration.html">Regitration</a>
+	</form>
+<script>
+		var firebaseConfig = {
+		    apiKey: "AIzaSyC1twuLONMtc9Bed3MfAtCP16Og8BFboC0",
+		    authDomain: "final-b9d65.firebaseapp.com",
+		    databaseURL: "https://final-b9d65.firebaseio.com",
+		    projectId: "final-b9d65",
+		    storageBucket: "final-b9d65.appspot.com",
+		    messagingSenderId: "988687201947",
+		    appId: "1:988687201947:web:09f596f76aa1ae2625f83e",
+		    measurementId: "G-TGPZN8KH7B"
+		};
+	  	firebase.initializeApp(firebaseConfig);
+	  	var db = firebase.database();
+	  	/*firebase.database().ref("User").set({
+			    name : "ewq",
+			    password: "ewq",
+			});
+		firebase.database().ref('User').once('value').then(function(snapshot) {
+  			var username = (snapshot.val() && snapshot.val().name) || 'Anonymous';
+		});
+		firebase.database().ref().child('User').push({name:"Anna"});*/
+
+		function SignIn(){
+			var _name = document.getElementById('name').value;
+			var _password = document.getElementById('password').value;
+
+		  	//changing
+		 	db.ref("User").set({
+			    name : _name,
+			    password: _password,
+			});
+		};
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+  </style> 
+</head>
+<body>
+	<header class="top">
+		<nav>
+			<a href="SignIn.html">Go the start page</a>
+			<a href="ChooseCrossword.html">Solve crossword</a>
+			<a href="MyCrosswords.html">My crosswords</a>
+		</nav>
+	</header>
+	<aside class="questions_panel questions_panel2">
+		<h3 align="center" style="color: black">
+			Questions
+		</h3>
+		<hr>
+		<p align="center"  class="conditions_panel">
+			<script type="text/javascript">
+				for (var i = 0; i < 25; i++) {
+					document.write('Questions here ');
+				}
+			</script>
+		</p>
+		<hr>
+		<div align="center"><button>Finish</button><button>Show Statistics</button></div>
+	</aside>
+	<article class="crossword solve_crossword">
+		<table cellpadding="0px" cellpadding="0px">
+			<script type="text/javascript">
+				for (var i = 0; i < 8; i++) {
+					document.write("<tr>");
+					for (var j = 0; j < 10; j++) {
+						document.write("<td><input class=\"table_cell table_cell2\"></td>");
+					}
+					document.write("</tr>");
+				}
+			</script>
+		</table>
+	</article>
+</body>
+</html>
